@@ -2,11 +2,11 @@
 
 Una herramienta educativa e interactiva diseñada para visualizar paso a paso el funcionamiento del algoritmo **Poda Alfa-Beta** en árboles de decisión para juegos de suma cero.
 
-![Preview del Simulador](public/favicon.svg) <!-- O usa una captura si el usuario la sube a github -->
+![Preview del Simulador](docs/images/preview.png)
 
 ## ✨ Características Principales
 
-- **Visualización en Tiempo Real**: Observa el recorrido del algoritmo (DFS), la actualización de valores y los límites $\alpha$ (Alfa) y $\beta$ (Beta).
+- **Visualización en Tiempo Real**: Observa el recorrido del algoritmo (DFS), la actualización de valores y los límites **Alfa (α)** y **Beta (β)**.
 - **Constructor Visual (No-Code)**: Crea tus propios árboles de estudio sin tocar código, añadiendo nodos MAX/MIN y hojas con un clic.
 - **Editor JSON Avanzado**: Para usuarios que prefieren definir estructuras complejas rápidamente mediante arreglos anidados.
 - **Lógica de Poda Realista**: Las ramas descartadas se marcan visualmente en rojo siguiendo las reglas matemáticas estrictas.
