@@ -6,13 +6,13 @@ Una herramienta educativa e interactiva diseñada para visualizar paso a paso el
 
 ## ✨ Características Principales
 
-- **Visualización en Tiempo Real**: Observa el recorrido del algoritmo (DFS), la actualización de valores y los límites **Alfa (α)** y **Beta (β)**.
-- **Constructor Visual (No-Code)**: Crea tus propios árboles de estudio sin tocar código, añadiendo nodos MAX/MIN y hojas con un clic.
-- **Editor JSON Avanzado**: Para usuarios que prefieren definir estructuras complejas rápidamente mediante arreglos anidados.
-- **Lógica de Poda Realista**: Las ramas descartadas se marcan visualmente en rojo siguiendo las reglas matemáticas estrictas.
-- **Panel Narrativo Multilingüe**: Explicación detallada de cada decisión tomada por el algoritmo en cada paso.
-- **Panel Arrastrable (Drag & Drop)**: Reposiciona la explicación de estado en cualquier lugar de la pantalla.
-- **Controles de Reproducción**: Pausa, ajusta la velocidad y navega manualmente por la línea de tiempo de la simulación.
+- **Visualización en tiempo real**: Observa el recorrido del algoritmo (DFS), la actualización de valores y los límites **Alfa (α)** y **Beta (β)**.
+- **Constructor visual (No-Code)**: Crea tus propios árboles de estudio sin tocar código, añadiendo nodos MAX/MIN y hojas con un clic.
+- **Editor JSON avanzado**: Para usuarios que prefieren definir estructuras complejas rápidamente mediante arreglos anidados.
+- **Lógica de poda realista**: Las ramas descartadas se marcan visualmente en rojo siguiendo las reglas matemáticas estrictas.
+- **Panel narrativo**: Explicación detallada de cada decisión tomada por el algoritmo en cada paso.
+- **Panel arrastrable (Drag & Drop)**: Reposiciona la explicación de estado en cualquier lugar de la pantalla.
+- **Controles de reproducción**: Pausa, ajusta la velocidad y navega manualmente por la línea de tiempo de la simulación.
 
 ## 🚀 Tecnologías Utilizadas
 
@@ -40,7 +40,7 @@ Una herramienta educativa e interactiva diseñada para visualizar paso a paso el
    ```
    Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-## 🧠 Contexto para Agentes AI (System Context)
+## 🧠 Contexto para Agentes IA (AI System Context)
 
 Este repositorio contiene un simulador pedagógico donde la jerarquía de archivos es:
 - `/src/core/tree.ts`: Define el `TreeNode` y los parsers (JSON -> Tree).
@@ -57,4 +57,4 @@ Este repositorio contiene un simulador pedagógico donde la jerarquía de archiv
 Este proyecto es de uso educativo y libre.
 
 ---
-*Desarrollado con ❤️ para estudiantes de Inteligencia Artificial.*
+**Desarrollado por José Alejandro Franco Calderon con el ❤️ para los estudiantes de Inteligencia Artificial.**
