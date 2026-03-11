@@ -1,12 +1,18 @@
 import type { TreeNode } from './tree';
 import { cloneTree } from './tree';
 
+/**
+ * Representa un estado específico de la simulación para la línea de tiempo.
+ */
 export interface SimulationStep {
-    tree: TreeNode;
-    message: string;
-    activeNodeId: string | null;
+    tree: TreeNode;         // Clon del árbol en este paso
+    message: string;        // Narrativa de lo que ocurre
+    activeNodeId: string | null; // ID del nodo resaltado
 }
 
+/**
+ * Ejecuta el algoritmo Minimax con Poda Alfa-Beta y captura cada micro-paso.
+ */
 export function runAlphaBetaSimulation(root: TreeNode): SimulationStep[] {
     const steps: SimulationStep[] = [];
 
@@ -45,6 +51,7 @@ export function runAlphaBetaSimulation(root: TreeNode): SimulationStep[] {
 
         addStep(simulationRoot, `Evaluando nodo ${node.id} (${node.type}). Alfa=${currentAlpha}, Beta=${currentBeta}`, node.id);
 
+        // Caso Base: Nodo Hoja
         if (node.type === 'LEAF') {
             node.isEvaluated = true;
             node.isCurrent = false;
@@ -92,7 +99,7 @@ export function runAlphaBetaSimulation(root: TreeNode): SimulationStep[] {
                 }
             }
 
-            // Condición de Poda
+            // --- Lógica Vital: Condición de Poda Alfa-Beta ---
             if (currentAlpha >= currentBeta) {
                 // En lugar de hacer break inmediatamente, marcamos que las siguientes ramas se podan
                 addStep(simulationRoot, `¡PODA! En ${node.id}: Alfa (${currentAlpha}) >= Beta (${currentBeta}). Se ignoran los siguientes hijos.`, node.id);

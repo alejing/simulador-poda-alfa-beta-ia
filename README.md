@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# Simulador Minimax con Poda Alfa-Beta 🤖🌳
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una herramienta educativa e interactiva diseñada para visualizar paso a paso el funcionamiento del algoritmo **Poda Alfa-Beta** en árboles de decisión para juegos de suma cero.
 
-Currently, two official plugins are available:
+![Preview del Simulador](public/favicon.svg) <!-- O usa una captura si el usuario la sube a github -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características Principales
 
-## React Compiler
+- **Visualización en Tiempo Real**: Observa el recorrido del algoritmo (DFS), la actualización de valores y los límites $\alpha$ (Alfa) y $\beta$ (Beta).
+- **Constructor Visual (No-Code)**: Crea tus propios árboles de estudio sin tocar código, añadiendo nodos MAX/MIN y hojas con un clic.
+- **Editor JSON Avanzado**: Para usuarios que prefieren definir estructuras complejas rápidamente mediante arreglos anidados.
+- **Lógica de Poda Realista**: Las ramas descartadas se marcan visualmente en rojo siguiendo las reglas matemáticas estrictas.
+- **Panel Narrativo Multilingüe**: Explicación detallada de cada decisión tomada por el algoritmo en cada paso.
+- **Panel Arrastrable (Drag & Drop)**: Reposiciona la explicación de estado en cualquier lugar de la pantalla.
+- **Controles de Reproducción**: Pausa, ajusta la velocidad y navega manualmente por la línea de tiempo de la simulación.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript**: Para una lógica de componentes robusta y tipada.
+- **Vite**: Motor de desarrollo ultra-rápido.
+- **Tailwind CSS 4**: Estilización moderna con estética "Glassmorphism" y modo oscuro.
+- **SVG Dinámico**: Motor de renderizado personalizado para el trazado de árboles sin solapamiento (Bounding Box logic).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Instalación y Uso Local
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clonar el repositorio**:
+   ```bash
+   git clone <url-del-repo>
+   cd alfa_beta_ai_sim_ag
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Ejecutar en modo desarrollo**:
+   ```bash
+   npm run dev
+   ```
+   Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧠 Contexto para Agentes AI (System Context)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este repositorio contiene un simulador pedagógico donde la jerarquía de archivos es:
+- `/src/core/tree.ts`: Define el `TreeNode` y los parsers (JSON -> Tree).
+- `/src/core/simulator.ts`: Contiene la implementación del algoritmo Alfa-Beta que genera el historial de pasos (`SimulationStep[]`).
+- `/src/components/TreeVisualizer.ts`: Motor de renderizado que calcula posiciones `x, y` dinámicas para evitar colisiones de ramas.
+- `/src/components/VisualTreeBuilder.tsx`: Interfaz No-Code para la creación manual de árboles.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Reglas de diseño**: 
+- Los nodos MAX son triángulos apuntando hacia arriba (Azul).
+- Los nodos MIN son triángulos apuntando hacia abajo (Esmeralda).
+- Las ramas podadas deben renderizarse en rojo (`#991b1b`).
+
+## 📄 Licencia
+Este proyecto es de uso educativo y libre.
+
+---
+*Desarrollado con ❤️ para estudiantes de Inteligencia Artificial.*
